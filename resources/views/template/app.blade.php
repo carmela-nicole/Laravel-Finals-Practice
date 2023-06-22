@@ -28,13 +28,21 @@
             <nav class="navbar navbar-expand-lg bg-dark navbar-dark justify-content-end ">
                 <!-- PRO FORMAT -->
                 <!-- "{{route('Music Videos')}}" -->
-                         <!-- NAME YOU PUT IN THE ROUTE -->
+                 <!-- NAME YOU PUT IN THE ROUTE -->
                 <a class="nav-link" href="{{route('ENHYPEN')}}"> ENHYPEN </a>
                 <a class="nav-link" href="{{route('ALBUMS')}}"> ALBUMS</a>
                 <a class="nav-link" href="{{route('ENGENE')}}"> ENGENE</a> 
                 <a class="nav-link" href="{{route('ENHYPEN MEMBERS')}}"> ENHYPEN MEMBERS</a>
-                <a class="nav-link" href="{{route('Music Videos')}}"> MUSIC Videos</a>
-              
+                <a class="nav-link" href="{{route('Music Videos')}}"> Music Videos</a>
+                <!-- <a class="nav-link" href="{{route('login')}}"> Sign In</a> -->
+                
+                @if(auth()->check())
+                <a class="nav-link" href="{{route('logout')}}">Log Out</a>
+            @else
+                <a class="nav-link" href="{{ route('login') }}">Log In</a>
+                <a class="nav-link" href="{{ route('register')}}">Register</a>
+
+            @endif
              </nav>
         </header>
  
